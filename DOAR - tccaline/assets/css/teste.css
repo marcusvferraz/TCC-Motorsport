@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Oregano&family=Oswald&display=swap');
+
+/* VARIAVEIS */
+
+:root {
+    --amarelo: #F5C070;
+    --laranja: #f6ba70;
+    --Branco: rgb(255, 255, 255);
+    --Sombra: 0 2px 20px rgba(0, 0, 0, 0.2);
+    --fundo: #d8d9dd;
+    --cinzaTranparent: #39393b88;
+    --rosado: #ff6b6c;
+    --bs-primary: #696cff;
+    --bs-secondary: #8592a3;
+}
+
+/* SEM LOGIN */
+.header-img-inst {
+    width: 100%;
+    height: 20rem;
+    background-color: #233446;
+}
+
+.card-org {
+    background-color: white;
+    height: auto;
+    border-radius: 10px;
+    position: relative;
+    top: -5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-bottom: 10px;
+}
+
+.card-org-img {
+    height: 10rem;
+    width: 10rem;
+    background-color: white !important;
+    border-radius: 50%;
+    position: relative;
+    top: -5rem;
+    margin: auto;
+    margin-bottom: -4rem;
+}
+
+.card-org-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.cont-dados-inst {
+    height: auto;
+    width: 100%;
+    background-color: var(--Branco);
+}
+
+@media screen and (max-width: 576px) {
+
+    /* ajuste do tamanho da imagem, ela diminue quando atinge o breakpoint */
+    div.card-org-img {
+        width: 7rem;
+        height: 7rem;
+        top: -3.5rem;
+        margin-bottom: -2rem;
+    }
+
+}
+
+/* logado */
+
+#logado div.header-img-inst {
+    height: 150px;
+    position: relative;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#logado {
+    position: relative;
+    top: 2rem;
+}
+
+/* logado fim */
+.nome-inst {
+    text-align: center;
+}
+
+.nome-inst span {
+    margin-top: 1rem;
+    display: block;
+}
+
+#VerMais img {
+    width: 24px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+.filtro-branco {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+/* fieldset personalizado */
+.bloco-borda {
+    border: 1px solid gray;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.bloco-borda legend {
+    position: relative;
+    top: -45px;
+    background-color: var(--Branco);
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* CARD INSTITUICAO PEQUENO */
+
+.card-inst-simples {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    padding: 0;
+    background-color: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.card-inst-simples .header {
+    height: 120px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-inst-simples .header .imagem-logo {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.card-inst-simples .body span {
+    display: block;
+    text-align: center;
+}
+
+span.telefone {
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span.titulo {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 576px) {
+
+    /* ajuste do tamanho do card, ela diminue quando atinge o breakpoint */
+
+    .card-inst-simples {
+        width: 150px;
+        height: 200px;
+    }
+
+    .card-inst-simples .header {
+        height: 70px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-inst-simples .header .imagem-logo {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .card-inst-simples .body span {
+        display: block;
+        text-align: center;
+    }
+
+    span.telefone {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    span.titulo {
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}
+
+/* P CLASSE LINHA*/
+
+p.linha {
+    border-bottom: 1px solid #dddfe6;
+    line-height: 1.6rem;
+}
+
+/* ajuste */
+div#invisivel {
+    box-shadow: none;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* CARD CAMPANHA */
+
+.card-camp {
+    margin: 15px;
+    background-color: var(--Branco);
+    border-radius: 10px;
+    box-shadow: var(--Sombra);
+    overflow: hidden;
+    width: 250px;
+    padding: 0;
+}
+
+@media screen and (max-width: 576px) {
+    .card-camp {
+        margin: auto !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+.card-body-camp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    padding-top: 13px;
+    height: 200px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 120px;
+    padding: 0;
+    margin: 0;
+}
+
+.tag {
+    background: linear-gradient(-45deg, var(--rosado), var(--laranja));
+    background: -moz-linear-gradient(-45deg, var(--rosado), var(--laranja));
+    background: -o-linear-gradient(-45deg, var(--rosado), var(--laranja));
+    background: -webkit-linear-gradient(-45deg, var(--rosado), var(--laranja));
+
+    border-radius: 50px;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    color: #fff;
+    padding: 2px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.user {
+    display: flex;
+    margin-top: auto;
+}
+
+.user img {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+.user-info span {
+    display: block;
+    margin: 0;
+}
+
+.user-info small {
+    color: #545d7a;
+}
+
+#bt-circulo-icone {
+    width: 60px;
+    height: 25px;
+    background-color: var(--Branco);
+    border: 1px solid var(--bs-primary);
+    color: var(--bs-primary);
+    margin-bottom: 3px;
+}
+
+#bt-circulo-icone:hover {
+    background-color: var(--bs-primary);
+    color: var(--Branco);
+}
+
+/* mini link instituicao */
+
+#mini-inst {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline;
+    margin-right: 15px;
+}
+
+.user-info-inst span {
+    margin-bottom: none;
+}
+
+/* CAMPANHA ENCERRADA */
+
+.encerrado {
+    filter: grayscale(1);
+}
+
+/* CREDITOS  */
+
+.creditos a {
+    color: #75767d;
+    font-size: 0.7rem;
+    text-decoration: none;
+}
+
+/* MENU SEM LOGIN */
+
+.menu-navegacao {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.menu-navegacao ul.navbar-nav {
+    margin-right: 0.8rem;
+}
+
+.menu-navegacao ul.navbar-nav li {
+    display: inline;
+    margin: 0.3rem 0;
+}
+
+.menu-navegacao ul.navbar-nav li a {
+    display: inline;
+    line-height: normal;
+}
+
+.menu-navegacao ul.navbar-nav li a:hover {
+
+    color: var(--bs-primary);
+}
+
+.menu-navegacao ul.navbar-nav li a.ativo {
+    color: var(--bs-primary) !important;
+}
+
+.menu-navegacao ul.navbar-nav li a.ativo {
+    border-bottom: none;
+}
+
+/* DIV FANTASMA - OCUPA ESPAÇO */
+
+div .ocupa-espaco {
+    margin-top: 5rem;
+    width: 2px;
+    height: 10px;
+}
+
+/* fieldset personalizado */
+.inst-dados-body .bloco-borda {
+    border: 1px solid gray;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.inst-dados-body .bloco-borda legend {
+    position: relative;
+    background-color: var(--Branco);
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* DOACAO -- BOTAO CONTADOR */
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    width: 60px;
+    margin: auto 10px;
+    border-color: var(--bs-secondary);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+#button-mais,
+#button-menos,
+.icone-filtro {
+    width: 17px !important;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%) !important;
+}
+
+.botao-icone {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+#mini-inst {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: inline;
+    margin-right: 15px;
+}
+
+.user-info-inst span {
+    margin-bottom: none;
+}
+
+.especialLetra {
+    font-family: 'Oregano', cursive !important;
+    font-size: 2.5rem;
+}
+
+/* IMAGEM PRINCIPAL DO SOBRE */
+#sobreImg {
+    width: 100%;
+    height: 300px;
+    background-image: url('../../img/background/sobreUrsinho.jpg');
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.imagem-final img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+/* LETRA IMPORTADA DO GOOGLE FONTS */
+.especialLetra {
+    font-family: 'Oregano', cursive !important;
+}
+
+/* LINHA GRIFADA DO TEXTO */
+.underline--magical {
+    background-image: linear-gradient(120deg, var(--rosado) 0%, var(--laranja) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.1em;
+    background-position: 0 88%;
+    transition: 0.25s ease-in;
+    padding: 4px;
+}
+
+.underline--magical:hover {
+    background-size: 100% 88%;
+    color: white;
+}
+
+.container-icones {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, var(--rosado), var(--laranja));
+    background: -o-linear-gradient(45deg, var(--rosado), var(--laranja));
+    background: -moz-linear-gradient(45deg, var(--rosado), var(--laranja));
+    background: -webkit-linear-gradient(45deg, var(--rosado), var(--laranja));
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
+
+.container-icones img {
+    width: 30px !important;
+}

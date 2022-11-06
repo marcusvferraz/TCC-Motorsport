@@ -1,0 +1,87 @@
+div.img-principal {
+    height: 650px;
+    background-image: url('../../img/background/qualidadeTeste.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+#Hide {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    div.img-principal {
+        background-image: url('../../img/background/psdMenor.jpg');
+    }
+}
+
+@media screen and (max-width: 800px) {
+    div.img-principal {
+        background-image: url('../../img/background/psdMenor.jpg');
+    }
+}
+
+@media screen and (max-width: 768px) {
+    div.img-principal {
+        background-position: left center;
+        background-image: url('../../img/background/psdSm.jpg');
+    }
+}
+
+@media screen and (max-width: 430px) {
+    div.img-principal {
+        background-image: url('../../img/background/psdMenor.jpg');
+    }
+
+    #Hide {
+        display: block;
+    }
+
+}
+
+#imagem-principal-celular {
+    height: auto;
+    min-height: 550px;
+}
+
+#texto-principal {
+    min-height: 550px;
+}
+
+#texto-principal h2 {
+    color: white;
+}
+
+#texto-principal p {
+    color: white;
+}
+
+.texto-principal {
+    height: 40%;
+    width: 70%;
+}
+
+#imagem-principal-celular img {
+    min-width: 350px;
+    max-width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* div.img-principal {
+        height: 650px;
+    } */
+
+    #imagem-principal-celular {
+        min-height: 375px;
+    }
+
+    #texto-principal {
+        min-height: 275px;
+    }
+
+}
+
+.jumbotron {
+    background-color: white;
+}
