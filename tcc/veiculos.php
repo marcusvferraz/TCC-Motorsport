@@ -99,7 +99,7 @@
   <div class="row">
     <?php
       include('conexao.php');
-      $sql = "SELECT * FROM tbl_veiculo, tbl_cor, tbl_combustivel, tbl_ano, tbl_fotoveiculo where Vei_Status = 1 ";
+      $sql = "SELECT * FROM tbl_veiculo, tbl_cor, tbl_combustivel, tbl_ano where Vei_Status = 1 ";
       $res = mysqli_query($con, $sql);
       
       $ids = array(
@@ -129,7 +129,7 @@
             "combustivel"=> [],
             "ano"=> []
           );
-          $sqlll = "SELECT * FROM tbl_veiculo, tbl_cor, tbl_combustivel, tbl_ano, tbl_fotoveiculo where Vei_Id = $id ";
+          $sqlll = "SELECT * FROM tbl_veiculo, tbl_cor, tbl_combustivel, tbl_ano where Vei_Id = $id ";
           $resss = mysqli_query($con, $sqlll);
           $dado = mysqli_fetch_array($resss);
           $status = 1;
@@ -172,7 +172,6 @@
                 
                 // pega as fotos
                 $sql = "SELECT * FROM tbl_fotoveiculo where tblVeiculo_Fot_Id=$id";
-
                 $res_ = mysqli_query($con, $sql);
                 if($res_){
                     // veiculo tem foto
@@ -184,13 +183,7 @@
                     $caminho_foto_no_image = "";
                     array_push($resultado['fotos'], $caminho_foto_no_image);
                 }
-
-                for($photos = 0; $photos < count($resultado['fotos']); $photos++){
-                  $fotos = $resultado['fotos'][$photos];
-                 
-                  
-                              
-                   echo "<div class='col'>
+              echo "<div class='col'>
                         <!---->
                         <div class='card' style='width: 18rem;'>
                     
@@ -200,16 +193,24 @@
                     style='--swiper-navigation-color: #fff; --swiper-pagination-color: #fff'
                     class='swiper mySwiper2'
                     >
-                    <div class='swiper-wrapper'>
-                    
-                    <div class='swiper-slide'>
-                    <img src='data:image;base64,'.base64_encode().'' />
-         
-                </div>
-                   
-                      <div class='swiper-button-next'></div>
+                    <div class='swiper-wrapper'><?php
+                          
+                                echo '
+                                    <div class='swiper-slide'>
+                                        <img src='data:image;base64,".base64_encode($foto)."' />
+                                    </div>
+                                ';
+                            }
+                        ?>
+                        
+                    </div>
+                    <div class='swiper-button-next'></div>
                     <div class='swiper-button-prev'></div>
-                  }
+                    </div>
+                    <div thumbsSlider='' class='swiper mySwiper'>
+                    <div class='swiper-wrapper'>
+                            }
+                        ?>
                     </div>
                     </div>
                       <p class='card-text'>". $resultado['modelo'][0] ."</p>
@@ -228,7 +229,6 @@
                         <!---->
               </div>";
               flush();
-                }
           } else {
               // redireciona para uma página qualquer
           }
@@ -237,26 +237,14 @@
         }
         // carro existe
       
-     
+        
     
     ?>
     
     
     <!--fim-card-->
   <!--  footer -->
-  <div class="swiper-wrapper">
-                        <?php
-                            for($photos = 0; $photos < count($resultado['fotos']); $photos++){
-                                $foto = $resultado['fotos'][$photos];
-                                echo '
-                                    <div class="swiper-slide">
-                                        <img src="data:image;base64,'.base64_encode($foto).'" />
-                                    </div>
-                                ';
-                            }
-                        ?>
-                        
-                    </div>
+  
   <br>
   <footer>
     <div class="footer">
