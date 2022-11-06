@@ -1,0 +1,171 @@
+body, html 
+{
+    margin: 0%;
+    padding-top: 0%;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.card {
+    height: 80%;
+    border: none;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  .swiper {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mySwiper2 {
+    height: 80%;
+    width: 100%;
+  }
+
+  .mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+
+  .mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.model {
+    width: auto;
+    font-size: 1.4rem;
+    color: rgb(5, 65, 149);
+}
+
+.informations {
+    padding: 6px;
+}
+
+.title {
+    font-weight: bolder;
+    padding: 0%;
+    margin: 0%;
+}
+
+.sub {
+    padding: 0%;
+    margin: 0%;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+h2 {
+    padding-top: 5%;
+    font-weight: lighter;
+}
+
+.local {
+    padding: 0%;
+    margin: 0%;
+    font-size: 15px;
+}
+
+.model {
+    
+    padding-bottom: 0% !important;
+    margin-bottom: 0% !important;
+}
+
+.valor {
+    color: rgb(4, 77, 129);
+    font-weight: bolder;
+    font-size: 3rem;
+    padding: 0%;
+    margin: 0%;
+}
+
+.btn {
+    width: auto;
+    color: white;
+    padding: 7px;
+    border-radius: 4px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    background-color: rgb(4, 77, 129);
+    margin-right: 4px;
+    margin-left: 10px;
+}
+
+.card2 {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    padding-bottom: 2%;
+    padding-top: 1%;
+}
+.card3 {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 1%;
+    margin-top: 3%;
+}
+
+.h2 {
+    margin: 0%;
+    padding: 0%;
+    color: rgb(5, 60, 154);
+}
+
+.info {
+    padding-top: 0.5%;
+    font-size: 1.3rem;
+}
