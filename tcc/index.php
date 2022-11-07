@@ -26,6 +26,7 @@
   <!-- Tweaks for older IEs-->
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <!-- body -->
 
@@ -66,8 +67,15 @@
                   <li class="nav-item">
                     <a class="nav-link" href="sobre.php">Sobre</a>
                   </li>
-                  <!--------->
-                  <!--------->
+                  <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="login.php">Login</a></li>
+            <li><a class="dropdown-item" href="registro.php">Register</a></li>
+          </ul>
+        </li>
                 </li>
               </div>
             </nav>
@@ -172,206 +180,27 @@
   <div class="row">
     <div class="col">
         <!----->
-  <style>
-.dropbtn {
-  background-color: #004AAD;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #004AAD;
-}
-
-#myInput {
-  box-sizing: border-box;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-
-#myInput:focus {outline: 3px solid #ddd;}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #FFFFFF;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
-</style>
+            <!----SELECT--->
 
 
 
 
-<div class="dropdown">
-            <button onclick="myFunction1()" class="btn btn-outline-success blue" type="submit">Ano</button>
-  <div id="myDropdown1" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput1" onkeyup="filterFunction1()">
-    <a href="#about">2011</a>
-    <a href="#base">2012</a>
-    <a href="#blog">2013</a>
-    <a href="#contact">2014</a>
-    <a href="#custom">2015</a>
-    <a href="#support">2016</a>
-    <a href="#tools">2017</a>
-    <a href="#tools">2018</a>
-    <a href="#tools">2019</a>
-    <a href="#tools">2020</a>
-    <a href="#tools">2021</a>
-    <a href="#tools">2022</a>
-  </div>
-</div>
 
-<script>
-function myFunction1() {
-  document.getElementById("myDropdown1").classList.toggle("show");
-}
 
-function filterFunction1() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput1");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown1");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    txtValue = a[i].textContent || a[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
-}
-</script>     
-  
+
       <!---->
     </div>
     <div class="col">
       <!---->
- <style>
-.dropbtn {
-  background-color: #004AAD;
-  color: white;
-  padding: 16px
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #004AAD;
-}
-
-#myInput {
-  box-sizing: border-box;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-}
-
-#myInput:focus {outline: 3px solid #ddd;}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #FFFFFF;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
-</style>
-</head>
-<body>
+     <!----SELECT--->
 
 
 
-<div class="dropdown">
-<button onclick="myFunction2()" class="btn btn-outline-success blue" type="submit">Marca</button>
-  <div id="myDropdown2" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput2" onkeyup="filterFunction2()">
-    <a href="#about">car</a>
-    <a href="#base">car</a>
-    <a href="#blog">car</a>
-    <a href="#contact">car</a>
-    <a href="#custom">car</a>
-    <a href="#support">2016</a>
-    <a href="#tools">2017</a>
-    <a href="#tools">2018</a>
-    <a href="#tools">2019</a>
-    <a href="#tools">2020</a>
-    <a href="#tools">2021</a>
-    <a href="#tools">2022</a>
-  </div>
-</div>
 
-<script>
-function myFunction2() {
-  document.getElementById("myDropdown2").classList.toggle("show");
-}
 
-function filterFunction2() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput2");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown2");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    txtValue = a[i].textContent || a[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
-}
-</script>
+     
+
+
       <!---->
     </div>
     <div class="col">

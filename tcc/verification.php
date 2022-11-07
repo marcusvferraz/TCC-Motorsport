@@ -27,41 +27,42 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
-    <div class="container">
-        <a class="navbar-brand" href="#">Verification Account</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
 
 <main class="login-form">
-    <div class="cotainer">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Verification Account</div>
-                    <div class="card-body">
-                        <form action="#" method="POST">
-                            <div class="form-group row">
-                                <label for="email_address" class="col-md-4 col-form-label text-md-right">OTP Code</label>
-                                <div class="col-md-6">
-                                    <input type="text" id="otp" class="form-control" name="otp_code" required autofocus>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6 offset-md-4">
-                                <input type="submit" value="Verify" name="verify">
-                            </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      
     </div>
-    </div>
+    <div class="col">
+      <!--SEPARACAO CARD-->
+      <div class="card" style="width: 30rem;">
+  <img src="adminpainel/img_login/img_login.png" class="card-img-top" alt="...">
+  <div class="card-body">
+  <form action="#" method="POST">
+  <div class="mb-3">
+      
+    <label for="exampleInputEmail1" class="form-label">Verificar Conta</label>
+    <input type="text" id="otp" class="form-control" name="otp_code" required autofocus>
+    <div id="emailHelp" class="form-text">Por favor Insira um Codigo OTP Válido</div>
+  </div>
 
+  <center>
+  <div class="col-md-6 off set-md-4">
+   <button type="submit" value="Verify" name="verify" class="btn btn-dark">Verificar</button>
+   
+</center>
+
+</form>
+  </div>
+</div>
+  <!--SEPARACAO CARD-->
+    </div>
+    <div class="col">
+      
+    </div>
+  </div>
+</div>
 </main>
 </body>
 </html>
@@ -75,15 +76,15 @@
         if($otp != $otp_code){
             ?>
            <script>
-               alert("Invalid OTP code");
+               alert("Codigo OTP Inválido");
            </script>
            <?php
         }else{
             mysqli_query($connect, "UPDATE tbl_login SET status = 1 WHERE email = '$email'");
             ?>
              <script>
-                 alert("Verfiy account done, you may sign in now");
-                   window.location.replace("index.php");
+                 alert("Conta Verificada!!");
+                   window.location.replace("login.php");
              </script>
              <?php
         }

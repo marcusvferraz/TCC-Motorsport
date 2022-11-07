@@ -197,7 +197,7 @@
                 $rs = mysqli_query($con, $sql) or die("Erro no select produtor");
                 while($dados = mysqli_fetch_array($rs)){
                   $sql3 = "SELECT * FROM tbl_fotoveiculo where tblVeiculo_Fot_Id=$id";
-                 $id = $dados['Fot_Imagem'] ;
+              $c = $id;
                  $foto = $resultado['fotos'][$photos];
               echo "<div class='col '>
                         <!---->
@@ -207,7 +207,7 @@
                       <div style='--swiper-navigation-color: #fff; --swiper-pagination-color: #fff'class='swiper mySwiper2'>
                     <div class='swiper-wrapper'>    
                     <div class='swiper-slide'>
-                    <img src='img/".$foto."' />
+                    <a href='telacarro.php?id=$id'> <img src='img/".$foto."' />
                    </div>
                     </div>
                     

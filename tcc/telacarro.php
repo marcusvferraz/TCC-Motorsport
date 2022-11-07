@@ -1,10 +1,4 @@
-
-
-
-
 <?php
-
-
 
 
 include('conexao.php');
@@ -12,8 +6,14 @@ $n = 1;
     if($n == 1) {
         // carro existe
         // faz a consulta sql obtendo o carro como parametro, ou seja, sql procura por veiculo de id = $_GET['c'];
+
+        if ($_GET) {
+            $id = $_GET['id'];
+        
+
         $tipo = 19;
-        $sql = "SELECT * FROM tbl_veiculo, tbl_cor, tbl_combustivel, tbl_ano where Vei_Id=$tipo";
+        $sql = "SELECT * FROM tbl_veiculo, tbl_cor, tbl_combustivel, tbl_ano where Vei_Id=$id";
+        }
         $res = mysqli_query($con, $sql);
         $resultado = array(
             "id"=>[],
@@ -72,7 +72,7 @@ $n = 1;
                 // array_push($resultado['veiculo'], $dado['tbl_Modelo_fk_tbl_Marca_tbl_Modelo']);
                 
                 // pega as fotos
-                $sql = "SELECT * FROM tbl_fotoveiculo where tblVeiculo_Fot_Id=$tipo";
+                $sql = "SELECT * FROM tbl_fotoveiculo where tblVeiculo_Fot_Id=$id";
                 $res_ = mysqli_query($con, $sql);
                 if($res_){
                     // veiculo tem foto
@@ -100,7 +100,10 @@ $n = 1;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.9.96/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="css/index.css">
@@ -125,7 +128,7 @@ $n = 1;
                                 $foto = $resultado['fotos'][$photos];
                                 echo '
                                     <div class="swiper-slide">
-                                        <img src="img/'.$foto.'" />
+                                    <img src="img/'.$foto.'" />
                                     </div>
                                 ';
                             }
@@ -142,7 +145,7 @@ $n = 1;
                                 $foto = $resultado['fotos'][$photos];
                                 echo '
                                     <div class="swiper-slide">
-                                    <img src="img/'.$foto.'" />
+                                        <img src="img/'.$foto.'" />
                                     </div>
                                 ';
                             }
@@ -155,7 +158,7 @@ $n = 1;
                 <h1><?php echo $resultado['modelo'][0] ?></h1>
                 <div class="row">
                     <?php
-                        if($resultado['tipo'][0] == "Caminhao"){
+                        if($resultado['tipo'][0] == "Automóveis"){
                             echo '<p class="model"><i class="mdi mdi-car"></i>&nbsp;'.$resultado["tipo"][0].'</p>';
                         }
                     ?>
@@ -182,7 +185,6 @@ $n = 1;
                     </div>
                 </div>
                 <p class="valor">R$<?php echo $resultado['valor'][0] ?></p>
-                <br>
                 <h2>Concessionária</h2>
                 <p class="model"><i class="mdi mdi-store"></i>Via Veículos</p>
                 <p class="local">Rua Joao Alencar, 33 - Centro, Guaratinguetá-SP</p>
